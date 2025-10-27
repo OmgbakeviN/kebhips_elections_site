@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KEBHIPS — Élections du Président du Campus</title>
+  <!-- Tailwind CSS via Play CDN (quick start) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configure Tailwind theme colors (blue & yellow from the logo palette)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kebBlue: { DEFAULT: '#1e3a8a' },    // blue-800
+            kebYellow: { DEFAULT: '#facc15' },  // yellow-400
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Simple fade-in & slide-up animations */
+    @keyframes fadeUp { from {opacity: 0; transform: translateY(12px)} to {opacity:1; transform:none} }
+    .animate-fadeUp { animation: fadeUp .7s ease-out both }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+  <!-- Skip link for a11y -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-kebYellow px-3 py-1 rounded">Aller au contenu</a>
+
+  <!-- Top bar -->
+  <nav class="border-b border-gray-200 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-3">
+        <!-- Logo + brand -->
+        <a class="flex items-center gap-3 group" href="index.html">
+          <img src="assets/logo.png" alt="Logo KEBHIPS" class="h-10 w-10 object-contain rounded-full ring-2 ring-kebYellow/60 group-hover:scale-105 transition" />
+          <div class="leading-tight">
+            <p class="font-semibold text-kebBlue tracking-wide">KEBHIPS</p>
+            <p class="text-xs text-gray-500">Kelden Bilingual Higher Institute of Professional Studies</p>
+          </div>
+        </a>
+
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex items-center gap-6 text-sm">
+          <li><a class="hover:text-kebBlue transition" href="index.html">Accueil</a></li>
+          <li><a class="hover:text-kebBlue transition" href="regles.html">Règles</a></li>
+          <li><a class="hover:text-kebBlue transition" href="documents.html">Documents</a></li>
+          <li><a class="hover:text-kebBlue transition" href="processus.html">Processus</a></li>
+          <li><a class="inline-flex items-center gap-2 bg-kebBlue text-white px-3 py-2 rounded-lg hover:bg-kebBlue/90 transition shadow" href="https://forms.gle/your-form-id" target="_blank" rel="noopener">S’inscrire</a></li>
+        </ul>
+
+        <!-- Hamburger (mobile) -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg ring-1 ring-gray-300 hover:ring-kebBlue transition"
+                aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <!-- Icon: 3 bars -->
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200" role="region">
+      <ul class="px-4 py-3 space-y-2 text-sm">
+        <li><a class="block px-3 py-2 rounded hover:bg-kebYellow/20" href="index.html">Accueil</a></li>
+        <li><a class="block px-3 py-2 rounded hover:bg-kebYellow/20" href="regles.html">Règles</a></li>
+        <li><a class="block px-3 py-2 rounded hover:bg-kebYellow/20" href="documents.html">Documents</a></li>
+        <li><a class="block px-3 py-2 rounded hover:bg-kebYellow/20" href="processus.html">Processus</a></li>
+        <li><a class="block px-3 py-2 rounded bg-kebBlue text-white" href="https://forms.gle/your-form-id" target="_blank" rel="noopener">S’inscrire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 grid md:grid-cols-2 gap-10 items-center">
+      <div class="animate-fadeUp">
+        <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-kebBlue">
+          <span class="h-1.5 w-1.5 rounded-full bg-kebYellow"></span> Élections du Président du Campus
+        </span>
+        <h1 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold text-kebBlue leading-tight">
+          Ose. Serre les rangs. Conduis la <span class="text-kebYellow">communauté</span>.
+        </h1>
+        <p class="mt-4 text-lg text-gray-600">
+          « Là où l’étudiant voit un couloir, le leader voit une passerelle. Qui prépare sa voie
+          élève sa voix. » Présente-toi, inspire, et construis l’héritage KEBHIPS.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://forms.gle/your-form-id" target="_blank" rel="noopener"
+             class="bg-kebBlue text-white px-5 py-3 rounded-xl hover:translate-y-[-2px] transition duration-300 shadow">
+            S’inscrire maintenant
+          </a>
+          <a href="regles.html" class="px-5 py-3 rounded-xl ring-1 ring-gray-300 hover:ring-kebBlue transition">
+            Lire les règles
+          </a>
+        </div>
+      </div>
+      <div class="md:justify-self-end animate-fadeUp md:delay-150">
+        <div class="relative">
+          <div class="absolute -inset-4 -z-10 bg-kebYellow/20 blur-2xl rounded-full"></div>
+          <img src="assets/logo.png" alt="Logo officiel KEBHIPS" class="h-56 w-56 sm:h-64 sm:w-64 object-contain mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-14 bg-gradient-to-b from-white to-yellow-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-kebBlue">Comment ça marche ?</h2>
+      <p class="mt-2 text-gray-600">Trois étapes simples pour rejoindre la course.</p>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl ring-1 ring-gray-200 bg-white hover:shadow-md transition">
+          <div class="text-kebBlue font-semibold">1) Prenez connaissance des règles</div>
+          <p class="mt-2 text-gray-600">Lisez les règles officielles et le guide d’utilisation de la plateforme.</p>
+          <a href="regles.html" class="mt-3 inline-block text-kebBlue hover:underline">Voir les règles →</a>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-gray-200 bg-white hover:shadow-md transition">
+          <div class="text-kebBlue font-semibold">2) Préparez vos documents</div>
+          <p class="mt-2 text-gray-600">CV, lettre de motivation, plan d’actions et liste du bureau.</p>
+          <a href="documents.html" class="mt-3 inline-block text-kebBlue hover:underline">Voir la checklist →</a>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-gray-200 bg-white hover:shadow-md transition">
+          <div class="text-kebBlue font-semibold">3) Soumettez votre dossier</div>
+          <p class="mt-2 text-gray-600">Remplissez le formulaire en ligne pour valider votre candidature.</p>
+          <a href="https://forms.gle/your-form-id" target="_blank" rel="noopener" class="mt-3 inline-block text-kebBlue hover:underline">Accéder au formulaire →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold text-kebBlue">Prêt(e) à servir ?</h3>
+      <p class="mt-2 text-gray-600">Le campus a besoin d’un(e) président(e) de Niveau 1 audacieux(se) et à l’écoute.</p>
+      <a href="https://forms.gle/your-form-id" target="_blank" rel="noopener"
+         class="mt-5 inline-block bg-kebYellow text-kebBlue font-semibold px-6 py-3 rounded-xl hover:translate-y-[-2px] transition shadow">
+        Je me lance
+      </a>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-2 gap-6 items-center">
+      <p class="text-sm text-gray-600">
+        Comité d’organisation des élections de Kelden — © 2025
+      </p>
+      <p class="text-sm text-gray-600 md:text-right">
+        Site réalisé par <span class="font-semibold">Academia Web Studio</span>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Minimal JS to toggle mobile menu and add small scroll effect -->
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', (!expanded).toString());
+        menu.classList.toggle('hidden');
+      });
+    }
+    // Blur header on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 8) nav.classList.add('shadow-sm');
+      else nav.classList.remove('shadow-sm');
+    });
+  </script>
+</body>
+</html>
